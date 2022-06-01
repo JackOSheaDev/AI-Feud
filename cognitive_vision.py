@@ -208,12 +208,19 @@ if __name__ == "__main__":
     cv = CognitiveVision(key=os.getenv("SUBSCRIPTION_KEY"),
                          endpoint=os.getenv("ENDPOINT"))
 
-    # Test API with image of dog.
+    # Test API with image of dog and an url to an image from Lorem Picsum
     results, caption = cv.call_cognitive_vision("dog_test.jpg")
-    values2 = cv.call_cognitive_vision({"url": "https://i.picsum.photos/id/1053/200/300.jpg?hmac=g"
+    url_results, url_caption = cv.call_cognitive_vision({"url": "https://i.picsum.photos/id/1053/200/300.jpg?hmac=g"
                                                "-MecQlcjGrVSsQX4Odc3D1ORJuzKsofZ6BIVb1Y4ok"})
 
+    # Print results from dog image.
     print(caption)
     for result in results:
+        print(result["name"])
+        print(result["confidence"])
+
+    # Print results from Lorem Picsum
+    print(url_caption)
+    for result in url_results:
         print(result["name"])
         print(result["confidence"])
