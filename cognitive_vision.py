@@ -209,7 +209,7 @@ if __name__ == "__main__":
                          endpoint=os.getenv("ENDPOINT"))
 
     # Test API with image of dog.
-    results, caption = cv.call_cognitive_vision("download.jpg")
+    results, caption = cv.call_cognitive_vision("dog_test.jpg")
     values2 = cv.call_cognitive_vision({"url": "https://i.picsum.photos/id/1053/200/300.jpg?hmac=g"
                                                "-MecQlcjGrVSsQX4Odc3D1ORJuzKsofZ6BIVb1Y4ok"})
 
