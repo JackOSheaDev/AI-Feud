@@ -1,5 +1,5 @@
 """
-Purpose: To create a class which implements cognitive_vision on random iamges.
+Purpose: To create a class which implements cognitive_vision on random images.
 Author: Jack O'Shea
 Date: 31/05/2022
 
@@ -86,7 +86,7 @@ class GuessBackend:
 
         Returns
         -------
-        Returns a dictionary containing a url which is a random string.
+        Returns a dictionary containing an url which is a random string.
         """
 
         # Makes a string 25 characters long of random characters.
@@ -122,3 +122,6 @@ if __name__ == "__main__":
     # Print the JSON object.
     main_dict = json.dumps(main_dict)
     print(main_dict)
+
+    with open("results.txt", "a") as file_object:
+        file_object.write(f"\n{main_dict}")
