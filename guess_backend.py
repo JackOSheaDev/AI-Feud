@@ -90,7 +90,7 @@ class GuessBackend:
         """
 
         # Makes a string 25 characters long of random characters.
-        generated_value = ''.join(random.choice(self.characters) for i in range(25))
+        generated_value = ''.join(random.choice(self.characters) for _ in range(25))
 
         # Returns the Dictionary containing the URL.
         return {"url": f"https://picsum.photos/seed/{generated_value}picsum/200/300"}
@@ -119,9 +119,8 @@ if __name__ == "__main__":
     contents = [tag['name'] for tag in gb.scan_image()[0]]
     main_dict = {"Url": gb.current_image_url["url"], "Caption": gb.scan_image()[1], "Contents": contents[0:6]}
 
-    # Print the JSON object.
-    main_dict = json.dumps(main_dict)
-    print(main_dict)
-
-    with open("results.txt", "a") as file_object:
-        file_object.write(f"\n{main_dict}")
+    with open("results.json", "r+") as file:
+        file_data = json.load(file)
+        file_data["Results"].append(main_dict)
+        file.seek(0)
+        json.dump(file_data, file, indent=4)

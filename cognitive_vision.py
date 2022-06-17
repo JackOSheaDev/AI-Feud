@@ -13,6 +13,7 @@ import os
 import requests
 # Dotenv to load in environmental variables to avoid releasing subscription key.
 from dotenv import load_dotenv
+
 load_dotenv()
 
 
@@ -211,7 +212,7 @@ if __name__ == "__main__":
     # Test API with image of dog and an url to an image from Lorem Picsum
     results, caption = cv.call_cognitive_vision("dog_test.jpg")
     url_results, url_caption = cv.call_cognitive_vision({"url": "https://i.picsum.photos/id/1053/200/300.jpg?hmac=g"
-                                               "-MecQlcjGrVSsQX4Odc3D1ORJuzKsofZ6BIVb1Y4ok"})
+                                                                "-MecQlcjGrVSsQX4Odc3D1ORJuzKsofZ6BIVb1Y4ok"})
 
     # Print results from dog image.
     print(caption)

@@ -1,0 +1,99 @@
+#:import utils kivy.utils
+
+# =============== MAIN SCREEN ===============
+<MainScreen>
+
+    # Background Section
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex('#31393C')
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    # Set up Layout and initialise components.
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Introduction Label
+        Label:
+            text: 'Welcome to AI Feud'
+            font_name: 'DejaVuSans'
+            font_size: 60
+
+            # Set the colour of the text
+            color: utils.get_color_from_hex('#2176FF')
+
+        # Name Label
+        Label:
+            text: 'Made by Jack 0\'Shea'
+            font_name: 'DejaVuSans'
+            font_size: 30
+
+            # Set the colour of the text.
+            color: utils.get_color_from_hex('#2176FF')
+
+        # Button to start the game.
+        Button:
+            id: start_button
+            size_hint: 0.75, 0.3
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            fontsize: 40
+            text: 'Press to Start'
+            font_name: 'DejaVuSans'
+
+            # Call function on press to start the game.
+            on_press: root.start()
+
+
+
+
+<GameScreen>
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex('#31393C')
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: 'What is in this image?'
+            font_name: 'Arial'
+            font_size: 30
+
+        AsyncImage:
+            source: root.image_url
+        Label:
+            text: root.get_lives()
+            font_size: 30
+
+        GridLayout:
+            cols: 2
+            rows: 3
+
+            Label:
+                id: image_value_1
+                text: '1'
+            Label:
+                id:  image_value_2
+                text: '2'
+            Label:
+                id: image_value_3
+                text: '3'
+            Label:
+                id: image_value_4
+                text: '4'
+            Label:
+                id: image_value_5
+                text: '5'
+            Label:
+                id: image_value_6
+                text: '6'
+
+        TextInput:
+            id: user_guess
+            hint_text: 'Enter Text'
+            multiline: False
+            on_text_validate: root.check()
