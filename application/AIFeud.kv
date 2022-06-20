@@ -6,7 +6,7 @@
     # Background Section
     canvas.before:
         Color:
-            rgba: utils.get_color_from_hex('#31393C')
+            rgba: utils.get_color_from_hex('#293241')
         Rectangle:
             pos: self.pos
             size: self.size
@@ -18,11 +18,11 @@
         # Introduction Label
         Label:
             text: 'Welcome to AI Feud'
-            font_name: 'DejaVuSans'
+            font_name: 'Anton'
             font_size: 60
 
             # Set the colour of the text
-            color: utils.get_color_from_hex('#2176FF')
+            color: utils.get_color_from_hex('#00E8FC')
 
         # Name Label
         Label:
@@ -31,7 +31,7 @@
             font_size: 30
 
             # Set the colour of the text.
-            color: utils.get_color_from_hex('#2176FF')
+            color: utils.get_color_from_hex('#00E8FC')
 
         # Button to start the game.
         Button:
@@ -41,59 +41,51 @@
             fontsize: 40
             text: 'Press to Start'
             font_name: 'DejaVuSans'
+            color: utils.get_color_from_hex('#293241')
 
             # Call function on press to start the game.
             on_press: root.start()
+            background_normal: ''
+            background_color: utils.get_color_from_hex('#00E8FC')
 
 
 
-
+# =============== GAME SCREEN ===============
 <GameScreen>
     canvas.before:
         Color:
-            rgba: utils.get_color_from_hex('#31393C')
+            rgba: utils.get_color_from_hex('#293241')
         Rectangle:
             pos: self.pos
             size: self.size
     BoxLayout:
+        spacing: 10
+        id: main_box
         orientation: 'vertical'
 
+        # Static content
         Label:
-            text: 'What is in this image?'
-            font_name: 'Arial'
+            text: 'What\'s in this Image ?'
+            font_name: 'DejaVuSans'
+            color: utils.get_color_from_hex('#00E8FC')
             font_size: 30
 
+        # Dynamic set by program
         AsyncImage:
-            source: root.image_url
+            id: image_used
+            allow_stretch: True
+        #Dynamic set by program
         Label:
-            text: root.get_lives()
+            id: life_counter
+            font_name: 'DejaVuSans'
+            color: utils.get_color_from_hex('#00E8FC')
             font_size: 30
 
+        # Dynamic Added to.
         GridLayout:
+            orientation: 'tb-lr'
+            id: answers
             cols: 2
             rows: 3
 
-            Label:
-                id: image_value_1
-                text: '1'
-            Label:
-                id:  image_value_2
-                text: '2'
-            Label:
-                id: image_value_3
-                text: '3'
-            Label:
-                id: image_value_4
-                text: '4'
-            Label:
-                id: image_value_5
-                text: '5'
-            Label:
-                id: image_value_6
-                text: '6'
 
-        TextInput:
-            id: user_guess
-            hint_text: 'Enter Text'
-            multiline: False
-            on_text_validate: root.check()
