@@ -14,7 +14,7 @@ import random
 # String to import the characters needed for the string.
 import string
 # Import my cognitive_vision class.
-from cognitive_vision import CognitiveVision
+from backend.cognitive_vision import CognitiveVision
 # Dotenv to load in environmental variables to avoid releasing subscription key.
 from dotenv import load_dotenv
 
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     contents = [tag['name'] for tag in gb.scan_image()[0]]
     main_dict = {"Url": gb.current_image_url["url"], "Caption": gb.scan_image()[1], "Contents": contents[0:6]}
 
-    with open("results.json", "r+") as file:
+    with open("../resources/results.json", "r+") as file:
         file_data = json.load(file)
         file_data["Results"].append(main_dict)
         file.seek(0)
