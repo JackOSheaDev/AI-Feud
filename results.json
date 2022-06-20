@@ -91,6 +91,42 @@
                 "jacket",
                 "scarf"
             ]
+        },
+        {
+            "Url": "https://picsum.photos/seed/7dpx0zOrjh5QXzfyQBCRhzLMJpicsum/200/300",
+            "Caption": "A bridge over water",
+            "Contents": [
+                "water",
+                "outdoor",
+                "sky",
+                "scene",
+                "cloud",
+                "pier"
+            ]
+        },
+        {
+            "Url": "https://picsum.photos/seed/fWURiVfvj9qVlzBBnTdaf7ukJpicsum/200/300",
+            "Caption": "A boat on the water",
+            "Contents": [
+                "nature",
+                "ship",
+                "water",
+                "lake",
+                "outdoor",
+                "boat"
+            ]
+        },
+        {
+            "Url": "https://picsum.photos/seed/EdI2nlFjXI8VRd5pcZ62kjATApicsum/200/300",
+            "Caption": "A wooden dock over a lake",
+            "Contents": [
+                "lake",
+                "tree",
+                "mountain",
+                "outdoor",
+                "water",
+                "nature"
+            ]
         }
     ]
 }
