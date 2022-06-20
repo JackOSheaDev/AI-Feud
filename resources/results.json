@@ -127,6 +127,29 @@
                 "water",
                 "nature"
             ]
+        },
+        {
+            "Url": "https://picsum.photos/seed/MdljGwHXZZens24jh8Pw7qUndpicsum/200/300",
+            "Caption": "A wooden bench on a pier",
+            "Contents": [
+                "bench",
+                "outdoor",
+                "water",
+                "lake",
+                "wooden",
+                "building"
+            ]
+        },
+        {
+            "Url": "https://picsum.photos/seed/yvpK6HEwbgne97ngvQFrVdTvQpicsum/200/300",
+            "Caption": "A person holding a leaf",
+            "Contents": [
+                "christmas tree",
+                "conifer",
+                "plant",
+                "tree",
+                "vegetable"
+            ]
         }
     ]
 }
