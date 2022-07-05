@@ -210,7 +210,7 @@ if __name__ == "__main__":
                          endpoint=os.getenv("ENDPOINT"))
 
     # Test API with image of dog and an url to an image from Lorem-Picsum
-    results, caption = cv.call_cognitive_vision("resources/dog_test.jpg")
+    results, caption = cv.call_cognitive_vision("../resources/dog_test.jpg")
     url_results, url_caption = cv.call_cognitive_vision({"url": "https://i.picsum.photos/id/1053/200/300.jpg?hmac=g"
                                                                 "-MecQlcjGrVSsQX4Odc3D1ORJuzKsofZ6BIVb1Y4ok"})
 
