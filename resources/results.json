@@ -150,6 +150,30 @@
                 "tree",
                 "vegetable"
             ]
+        },
+        {
+            "Url": "https://picsum.photos/seed/za6s9dstM0Ke53qkD7fFqGG4xpicsum/200/300",
+            "Caption": "A tall building with a metal frame",
+            "Contents": [
+                "skyscraper",
+                "sky",
+                "architecture",
+                "building",
+                "city",
+                "tower"
+            ]
+        },
+        {
+            "Url": "https://picsum.photos/seed/WtYeVGUjDkZnJXd9P4IKNuapspicsum/200/300",
+            "Caption": "A body of water with waves and a blue sky",
+            "Contents": [
+                "water",
+                "outdoor",
+                "beach",
+                "sky",
+                "ocean",
+                "sea"
+            ]
         }
     ]
 }

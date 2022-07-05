@@ -119,6 +119,7 @@ if __name__ == "__main__":
     contents = [tag['name'] for tag in gb.scan_image()[0]]
     main_dict = {"Url": gb.current_image_url["url"], "Caption": gb.scan_image()[1], "Contents": contents[0:6]}
 
+    # Save new entry to resources/results.json file.
     with open("resources/results.json", "r+") as file:
         file_data = json.load(file)
         file_data["Results"].append(main_dict)
